@@ -51,7 +51,7 @@
                         </div>
                         <div class="mb-3">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <button class="btn btn-primary" type="button">Agregar</button>
+                                <button class="btn btn-primary" type="submit">Agregar</button>
                                 <button class="btn btn-primary" type="button">Cancelar</button>
                             </div>
                         </div>

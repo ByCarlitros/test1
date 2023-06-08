@@ -12,13 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profesores', function (Blueprint $table) {
-            $table->Integer('id')->autoIncrement();
+            $table->integer('id')->autoIncrement();
             $table->string('nombre',20);
             $table->string('apellido',20);
             $table->string('email',50);
-
-            $table->string('profesor_id');
-            $table->foreign('profesor_id');
 
             $table->timestamps();
         });

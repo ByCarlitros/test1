@@ -17,6 +17,12 @@ use App\Http\Controllers\AdminController;
 //    return view('welcome');
 //});
 
-Route::get('/',[AdminController::class,'indexadmin'])->name('admin.indexadmin');
+Route::get('/',[AdminController::class,'index'])->name('admin.indexadmin');
 
-Route::get('/estudiantesmenu',[EstudianteController::class,'menuestudiantes'])->name('estudiantes.menuestudiantes');
+Route::get('/estudiantes_menu',[EstudiantesController::class,'index'])->name('estudiantes.index');
+Route::get('/estudiantes_lista',[EstudiantesController::class,'show'])->name('estudiantes.lista');
+Route::post('/estudiantes_lista',[EstudiantesController::class,'store'])->name('estudiantes.store');
+
+Route::get('/profesores_menu',[ProfesorController::class,'index'])->name('profesores.index');
+Route::get('/profesores_lista',[ProfesorController::class,'show'])->name('estudiantes.lista');
+Route::post('/profesores_lista',[ProfesorController::class,'store'])->name('profesores.store');

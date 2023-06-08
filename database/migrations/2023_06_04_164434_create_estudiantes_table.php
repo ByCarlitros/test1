@@ -17,9 +17,6 @@ return new class extends Migration
             $table->string('apellido',20);
             $table->string('email',50);
 
-            $table->string('estudiante_rut');
-            $table->foreign('estudiante_rut');
-
             $table->timestamps();
         });
     }

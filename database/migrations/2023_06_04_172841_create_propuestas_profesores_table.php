@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('propuestas_profesores', function (Blueprint $table) {
-            $table->Integer('propuesta_id')->primary();
-            $table->Integer('profesor_id')->primary();
             $table->date('fecha');
             $table->time('hora');
             $table->text('comentario');
+
+            $table->integer('id_profesor');
+            $table->integer('id_propuesta');
+
+            $table->foreign('id_profesor')->references('id')->on('profesores');
+            $table->foreign('id_propuesta')->references('id')->on('propuestas');
 
             $table->timestamps();
         });

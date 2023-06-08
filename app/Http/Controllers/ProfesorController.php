@@ -12,6 +12,7 @@ class ProfesorController extends Controller
         $profesor->nombre= $request->nombre;
         $profesor->apellido= $request->apellido;
         $profesor->email= $request->email;
+        
         $profesor->save();
     
     }

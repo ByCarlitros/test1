@@ -9,7 +9,7 @@ class Profesor extends Model
 {
     use HasFactory;
     protected $table ='profesores';
-    protected $primaryKey = 'Id';
+    protected $primaryKey = 'id';
     protected $keyType = 'integer'; 
     public $incrementing = false;
 
