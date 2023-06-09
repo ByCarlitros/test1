@@ -9,6 +9,7 @@ class PropuestaController extends Controller
     public function store(Request $request)
     {
         $propuesta = new Propuesta();
+        $propuesta -> id =$request->id;
         $propuesta -> estudiante_rut = $request->rut;
         $propuesta -> documento = $request->documento;
         $propuesta -> estado = 0;
@@ -18,8 +19,8 @@ class PropuestaController extends Controller
         $propuesta -> save();
         return redirect()->route('estudiantes.proyecto');
     }
-
-    public function update(Request $request,Propuesta $jugador){
+    
+    public function update(Request $request,Propuesta $propuesta){
         $propuesta->estado = $request->estado;
         $jugador->save();
         return redirect()->route('admin.index');

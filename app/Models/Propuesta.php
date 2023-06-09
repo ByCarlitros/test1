@@ -10,7 +10,7 @@ class Propuesta extends Model
 {
     use HasFactory;
     protected $table ='propuestas';
-    
+    protected $primary ='id';
     public $timestamps = false; 
 
     public function estudiantes():BelongsTo{

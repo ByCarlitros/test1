@@ -25,4 +25,5 @@ class EstudiantesController extends Controller
         // return view('jugadores.edit',compact('jugador'));
         return view('estudiantes.lista',compact(['estudiante']));
     }
+    
 }
