@@ -25,11 +25,11 @@
                             Usuarios
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('admin.index') }}">Vista Administrador</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.index')}}">Vista Administrador</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{route('profesores.index')}}">Vista Profesor</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ route('estudiantes.index') }}">Vista Alumno</a></li>
+                            <li><a class="dropdown-item" href="{{route('estudiantes.index')}}">Vista Alumno</a></li>
                         </ul>
                     </li>
                 </ul>

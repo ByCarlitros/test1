@@ -13,7 +13,24 @@ class EstudiantesSeeder extends Seeder
     public function run(): void
     {
         DB::table('estudiantes')->insert([
-            ['rut'=>'21228253-7','nombre'=>'Carlos','apellido'=>'Andrades','email'=>'carlos.andrades@usm.cl','estudiante_rut'=>'21228253-7'],
+            [
+                "rut"=>"21228253-7",
+                "nombre"=>"Carlos",
+                "apellido"=>"Andrades",
+                "email"=>"carlos.andrades@usm.cl"
+            ],
+            [
+                "rut"=>"22222222-2",
+                "nombre"=>"Tomas",
+                "apellido"=>"Tapia",
+                "email"=>"Tomas.tapia@usm.cl",
+            ],
+            [
+                "rut"=>"33333333-3",
+                "nombre"=>"Manuel",
+                "apellido"=>"Smith",
+                "email"=>"manuel.smith@usm.cl"
+            ],
         ]);
     }
 }

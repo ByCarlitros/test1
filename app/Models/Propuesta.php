@@ -16,4 +16,13 @@ class Propuesta extends Model
     public function estudiantes():BelongsTo{
         return $this->belongsTo(Estudiante::class);
     }
+    public function propuestaPivot(): BelongsToMany {
+        return $this->belongsToMany(Propuesta::class)->withPivot(
+        [
+            'fecha',
+            'hora',
+            'comentario'
+        ]
+        );
+    }
 }

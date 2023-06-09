@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Estudiante;
+use Illuminate\Http\Request;
+
 
 class EstudiantesController extends Controller
 {
     public function index(){
         return view('estudiantes.index');
     }
+    public function create()
+  {
+    return view('estudiantes.lista');
+  }
     public function store(Request $request){
         $estudiante = new Estudiante();
         $estudiante->rut = $request->rut;

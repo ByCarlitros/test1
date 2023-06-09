@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('documento',100);
             $table->tinyInteger('estado');
 
-            $table->string('estudiante_rut');
+            $table->string('estudiante_rut',10);
             $table->foreign('estudiante_rut')->references('rut')->on('estudiantes');
-            
+            $table->softDeletes();
 
             $table->timestamps();
         });

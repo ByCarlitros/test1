@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfesoresController;
+use App\Http\Controllers\PropuestasController;
+use App\Http\Controllers\EstudiantesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,12 +20,16 @@ use App\Http\Controllers\AdminController;
 //    return view('welcome');
 //});
 
-Route::get('/',[AdminController::class,'index'])->name('admin.indexadmin');
+Route::get('/',[AdminController::class,'index'])->name('admin.index');
+Route::get('/admin/editar',[PropuestasController::class,'edit'])->name('admin.edit');
+Route::get('/admin/editar/{estudiante}',[PropuestaController::class,'show'])->name('admin.change');
 
-Route::get('/estudiantes_menu',[EstudiantesController::class,'index'])->name('estudiantes.index');
-Route::get('/estudiantes_lista',[EstudiantesController::class,'show'])->name('estudiantes.lista');
-Route::post('/estudiantes_lista',[EstudiantesController::class,'store'])->name('estudiantes.store');
+Route::get('/estudiantes',[EstudiantesController::class,'index'])->name('estudiantes.index');
+Route::get('/estudiantes/lista',[EstudiantesController::class,'show'])->name('estudiantes.lista');
+Route::post('/estudiantes/lista',[EstudiantesController::class,'store'])->name('estudiantes.store');
 
-Route::get('/profesores_menu',[ProfesorController::class,'index'])->name('profesores.index');
-Route::get('/profesores_lista',[ProfesorController::class,'show'])->name('estudiantes.lista');
-Route::post('/profesores_lista',[ProfesorController::class,'store'])->name('profesores.store');
+
+Route::get('/index/profesores',[ProfesoresController::class,'index'])->name('profesores.index');
+Route::get('/profesores/lista',[ProfesoresController::class,'show'])->name('profesores.lista');
+Route::post('/profesores/lista',[ProfesoresController::class,'store'])->name('profesores.store');
+Route::delete('/profesores/{comentario}',[ProfesoresController::class,'destroy'])->name('profesores.destroy');

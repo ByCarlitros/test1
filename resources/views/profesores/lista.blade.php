@@ -1,4 +1,4 @@
-@extends('templates.master')
+@extatemplates.master')
 
 @section('contenido-normal')
 <div class="row">
@@ -58,8 +58,8 @@
     </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary me-md-2" type="button">Cambiar a profesores</button>
-    <button class="btn btn-primary" type="button">Volver al menu</button>
+    <a class="btn btn-primary me-md-2" href="#" type="button">Cambiar a profesores</a>
+    <a class="btn btn-primary" href="#" type="button">Volver al menu</a>
 </div>
 
 @endsection

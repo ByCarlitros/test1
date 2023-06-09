@@ -1,25 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Profesor;
 
-class ProfesorController extends Controller
+class ProfesoresController extends Controller
 {
+    public function index()
+    {
+        return view('profesores.index');
+    }
+
+    public function create()
+    {
+        $profesores = Profesor::orderBy('id')->get();
+        return view('profesores.create');
+    }
+
     public function store(Request $request){
         $profesor = new Profesor();
-        $profesor->id = $request->id;
         $profesor->nombre= $request->nombre;
         $profesor->apellido= $request->apellido;
         $profesor->email= $request->email;
         
         $profesor->save();
     
-    }
-    public function create(Profesor $profesor){
-        $profesores = Profesor::orderBy('rut')->get();
-        
-        // return view('jugadores.edit',compact('jugador'));
-        return view('estudiantes.lista',compact(['estudiante']));
     }
 }

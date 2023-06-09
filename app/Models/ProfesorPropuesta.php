@@ -13,4 +13,5 @@ class ProfesorPropuesta extends Model
     protected $primary ='propuesta_id';
     public $timestamps =false; 
 
+    
 }

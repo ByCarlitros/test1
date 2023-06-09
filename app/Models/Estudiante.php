@@ -12,6 +12,10 @@ class Estudiante extends Model
     protected $primaryKey = 'rut';
     protected $keyType = 'string';
     public $incrementing = false;
+    public $timestamps = false;
 
+    public function propuestas():HasMany {
+        return $this->hasMany(Propuesta::class);
+    }
     
 }
