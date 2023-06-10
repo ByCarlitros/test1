@@ -28,7 +28,7 @@
     </div>
   </div>  
   <div class="card">
-    <img src="{{asset('images/5f92f011ab9e8.jpeg')}}" class="card-img-top">
+    <img src="{{asset('images/webimage-4AEA2AC6-F039-4DD7-A99B9BE6F7F66CCC.jpg')}}" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">Estado de Propuestas</h5>
       <p class="card-text">Gestiona el estado de las propuestas de los alumnos para asi establecer su estado correspondiente.</p>

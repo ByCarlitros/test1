@@ -31,7 +31,8 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-body">
-                    <form method="POST" action="{{route('estudiantes.store')}}">
+                    <form method="POST" action="{{route('profesores.store')}}">
+                        @method('POST')
                         @csrf
                         <div class="mb-3">
                             <label for="nombre">Nombre</label>

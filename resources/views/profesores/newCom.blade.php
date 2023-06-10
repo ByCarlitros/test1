@@ -1,4 +1,4 @@
-@extends('templatex.master')
+@extends('templates.master')
 
 @section('contenido-normal')
 <div class="row">

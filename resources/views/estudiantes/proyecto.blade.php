@@ -18,9 +18,17 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mb-4">
-                            <label for="formFileSm" class="form-label">Subir archivo</label>
-                            <input class="form-control form-control-sm" id="archivo" type="file">
+                        <div class="input-group mb-3">
+                            <label for="propuesta"></label>
+                            <input type="text" id="propuesta" name="propuesta" class="form-control" placeholder="Propuesta" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="hora"></label>
+                            <input type="text" id="hora" name="propuesta" class="form-control" placeholder="hora" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="fecha"></label>
+                            <input type="text" id="fecha" name="fecha" class="form-control" placeholder="fecha" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button class="btn btn-primary me-md-2" type="submit">Enviar</button>

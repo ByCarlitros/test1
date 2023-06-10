@@ -25,8 +25,9 @@ Route::get('/',[AdminController::class,'index'])->name('admin.index');
 Route::get('/admin/editar',[PropuestasController::class,'edit'])->name('admin.edit');
 Route::get('/admin/editar/{estudiante}',[PropuestasController::class,'show'])->name('admin.change');
 Route::get('/estudiantes/create',[PropuestasController::class,'create'])->name('estudiantes.proyecto');
+
 Route::post('/estudiantes/create',[PropuestasController::class,'store'])->name('propuestas.store');
-Route::post('/estudiantes/', [PropuestasController::class, 'enter'])->name('propuestas.enter');
+
 
 Route::get('/estudiantes',[EstudiantesController::class,'index'])->name('estudiantes.index');
 Route::get('/estudiantes/lista',[EstudiantesController::class,'show'])->name('estudiantes.lista');

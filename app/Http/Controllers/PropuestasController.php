@@ -9,9 +9,11 @@ use App\Models\Propuesta;
 class PropuestasController extends Controller
 {
     public function enter(Request $req) {
-        $estudiante = Estudiante::find($req->estudiantes);
+        $estudiante = Estudiante::all();
         return redirect()->route('propuestas.show', compact('estudiante'));
     }
+    
+    
     public function index() {
         $estudiantes = Estudiante::all();
         return view('admin.edit', compact('estudiantes'));
@@ -19,17 +21,6 @@ class PropuestasController extends Controller
     public function create(){
         $estudiantes = Estudiante::all();
         return view('estudiantes.proyecto', compact('estudiantes'));
-    }
-    public function subirArchivo(Request $request)
-    {
-        $datosArchivo = file_get_contents($archivo->getRealPath());
-
-        $nuevoArchivo = new Archivo;
-        $nuevoArchivo->nombre = $archivo->getClientOriginalName();
-        $nuevoArchivo->contenido = $datosArchivo;
-        $nuevoArchivo->save();
-
-        return response()->json(['mensaje' => 'Archivo subido correctamente']);
     }
     public function show(Estudiante $estudiante) {
         $profesores = Profesor::all();
@@ -41,25 +32,7 @@ class PropuestasController extends Controller
           'propuestas'
         ]));
       }
-    public function store(Request $request)
-    {
-        $propuesta = new Propuesta();
-        $file = $request->file('archivo');
-
-        $fileName = $file->getClientOriginalName();
-        Storage::putFileAs(
-            'propuestas', $file, $fileName
-    );
-
-        Storage::setVisibility($fileName, 'public');
-
-        $propuesta->fecha = Carbon::now();
-        $propuesta->documento = $fileName;
-        $propuesta->estado = 0;
-        $propuesta->estudiante_rut = $estudiante->rut;
-        $propuesta -> save();
-        return redirect()->route('estudiantes.index');
-    }
+    
     
     public function createComment(Estudiante $estudiante)
     {
@@ -82,7 +55,25 @@ class PropuestasController extends Controller
         return Storage::download('propuestas/' . $fileName);
       }
 
-    
+    public function store(Request $request)
+    {
+        $propuesta = new Propuesta();
+        $file = $request->file('archivo');
+
+        $fileName = $file->getClientOriginalName();
+        Storage::putFileAs(
+            'propuestas', $file, $fileName
+    );
+
+        Storage::setVisibility($fileName, 'public');
+
+        $propuesta->fecha = Carbon::now();
+        $propuesta->documento = $fileName;
+        $propuesta->estado = 0;
+        $propuesta->estudiante_rut = $estudiante->rut;
+        $propuesta -> save();
+        return redirect()->route('estudiantes.proyecto');
+    }
     
     public function update(Request $request,Propuesta $propuesta){
         $propuesta->estado = $request->estado;
@@ -90,7 +81,17 @@ class PropuestasController extends Controller
         return redirect()->route('admin.change');
     }
 
+    public function subirArchivo(Request $request)
+    {
+        $datosArchivo = file_get_contents($archivo->getRealPath());
 
+        $nuevoArchivo = new Archivo;
+        $nuevoArchivo->nombre = $archivo->getClientOriginalName();
+        $nuevoArchivo->contenido = $datosArchivo;
+        $nuevoArchivo->save();
+
+        return response()->json(['mensaje' => 'Archivo subido correctamente']);
+    }
     public function destroy(Propuesta $propuesta) {
         $propuesta->delete();
         return redirect()->route('estudiantes.index');

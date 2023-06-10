@@ -28,6 +28,7 @@ class ProfesoresController extends Controller
         $profesor->email= $request->email;
         
         $profesor->save();
+        return redirect()->route('profesores.lista', compact('profesor'));
     
     }
 }
