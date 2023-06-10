@@ -15,6 +15,10 @@ class EstudiantesController extends Controller
   {
     return view('estudiantes.lista');
   }
+  public function show() {
+    $estudiantes = Estudiante::all();
+    return view('estudiantes.lista', compact('estudiantes'));
+  }
     public function store(Request $request){
         $estudiante = new Estudiante();
         $estudiante->rut = $request->rut;

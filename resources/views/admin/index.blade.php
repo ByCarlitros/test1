@@ -1,16 +1,12 @@
 @extends('templates.master')
 
 @section('contenido-normal')
-<div class="row mt-1">
-    <div class="col">
-    <h4>DEBUG MODE</h4>
-    </div>
-</div>
+
 <div class="row">
   <div class="col-12 col-lg-9 text-center px-4 g-2 align-items-center">
     <div class="card-group">
     <div class="card">
-      <img src="{{asset('images/images.jpg')}}" class="card-img-top">
+      <img src="{{asset('images/thumb-becas-santander.jpg')}}" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">Listado de Profesores</h5>
       <p class="card-text">Gestiona la lista de profesores registrados para revisar su informacion actualizada.</p>
@@ -21,7 +17,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="..." class="card-img-top">
+    <img src="{{asset('images/Bienvenida-PACE-propedeutico-USM-5.jpg')}}" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">Listado de alumnos</h5>
       <p class="card-text">Gestiona la lista de alumnos para asi mantener su informacion actualizada.</p>
@@ -32,7 +28,7 @@
     </div>
   </div>  
   <div class="card">
-    <img src="..." class="card-img-top">
+    <img src="{{asset('images/5f92f011ab9e8.jpeg')}}" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">Estado de Propuestas</h5>
       <p class="card-text">Gestiona el estado de las propuestas de los alumnos para asi establecer su estado correspondiente.</p>

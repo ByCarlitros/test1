@@ -26,10 +26,22 @@ class EstudiantesSeeder extends Seeder
                 "email"=>"Tomas.tapia@usm.cl",
             ],
             [
-                "rut"=>"33333333-3",
+                "rut"=>"21433377-5",
                 "nombre"=>"Manuel",
-                "apellido"=>"Smith",
-                "email"=>"manuel.smith@usm.cl"
+                "apellido"=>"Suarez",
+                "email"=>"Manuel.Suarez@usm.cl"
+            ],
+            [
+                "rut"=>"21217612-5",
+                "nombre"=>"Joaquin",
+                "apellido"=>"Sandoval",
+                "email"=>"JoaquinSandoval@usm.cl"
+            ],
+            [
+                "rut"=>"20731182-0",
+                "nombre"=>"Javier",
+                "apellido"=>"Nuñez",
+                "email"=>"Javier.Nuñez.@usm.cl"
             ],
         ]);
     }

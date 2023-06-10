@@ -24,7 +24,7 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="posicion" id="En revision" value=0 @if($propuesta->estado==0) checked @endif>
+                            <input class="form-check-input" type="radio" name="estado" id="En revision" value=0 @if($propuesta->estado==0) checked @endif>
                             <label class="form-check-label" for="En revision">
                                 En revision
                             </label>

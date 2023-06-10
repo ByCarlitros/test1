@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProfeorSeeder extends Seeder
+class ProfesorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,6 +23,21 @@ class ProfeorSeeder extends Seeder
                 'nombre'=>'Mariano',
                 'apellido'=>'Gomez',
                 'email'=>'mariano.gomez@usm.cl'
+            ],
+            [   
+                'nombre'=>'Amanda',
+                'apellido'=>'Rojas',
+                'email'=>'amanda.rojas@usm.cl'
+            ],
+            [   
+                'nombre'=>'Eduardo',
+                'apellido'=>'Gonzalez',
+                'email'=>'eduardo.gonzalez@usm.cl'
+            ],
+            [   
+                'nombre'=>'',
+                'apellido'=>'',
+                'email'=>'@usm.cl'
             ],
         ]);
     }

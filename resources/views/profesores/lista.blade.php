@@ -1,4 +1,4 @@
-@extatemplates.master')
+@extends('templates.master')
 
 @section('contenido-normal')
 <div class="row">
@@ -32,6 +32,7 @@
             <div class="card-header">
                 <div class="card-body">
                     <form method="POST" action="{{route('estudiantes.store')}}">
+                        @csrf
                         <div class="mb-3">
                             <label for="nombre">Nombre</label>
                             <input type="text" id="nombre" name="nombre" class="form-control">
@@ -40,15 +41,15 @@
                             <label for="apellido">Apellido</label>
                             <input type="text" id="apellido" name="apellido" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label for="email">Email</label>
-                            <span class="input-group-text" id="addon-wrapping">@</span>
-                            <input type="text" id="email" name="email" class="form-control">
+                        <div class="input-group flex-nowrap ">
+                            <span class="input-group-text text-end" id="addon-wrapping">@</span>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="addon-wrapping">
                         </div>
+                        <br>
                         <div class="mb-3">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <button class="btn btn-primary" type="button">Agregar</button>
-                                <button class="btn btn-primary" type="button">Cancelar</button>
+                                <button class="btn btn-primary" type="submit">Agregar</button>
+                                <button class="btn btn-primary" type="reset">Cancelar</button>
                             </div>
                         </div>
                     </form>
@@ -57,9 +58,11 @@
         </div>
     </div>
 </div>
+<br>
+<br>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a class="btn btn-primary me-md-2" href="#" type="button">Cambiar a profesores</a>
-    <a class="btn btn-primary" href="#" type="button">Volver al menu</a>
+    <a class="btn btn-primary me-md-2" href="{{route('estudiantes.lista')}}" type="button">Cambiar a estudiantes</a>
+    
 </div>
 
 @endsection

@@ -31,7 +31,9 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-body">
-                    <form method="POST" action="{{route('estudiantes.store')}}">
+                    <form  action="{{route('estudiantes.store')}}">
+                        @method('POST')
+                        @csrf
                         <div class="mb-3">
                             <label for="rut">Rut</label>
                             <input type="text" id="rut" name="rut" class="form-control">
@@ -44,11 +46,11 @@
                             <label for="apellido">Apellido</label>
                             <input type="text" id="apellido" name="apellido" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label for="email">Email</label>
-                            <span class="input-group-text" id="addon-wrapping">@</span>
-                            <input type="text" id="email" name="email" class="form-control">
+                        <div class="input-group flex-nowrap ">
+                            <span class="input-group-text text-end" id="addon-wrapping">@</span>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" aria-label="Username" aria-describedby="addon-wrapping">
                         </div>
+                        <br>
                         <div class="mb-3">
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <button class="btn btn-primary" type="submit">Agregar</button>
@@ -61,9 +63,11 @@
         </div>
     </div>
 </div>
+<br>
+<br>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary me-md-2" type="button">Cambiar a profesores</button>
-    <button class="btn btn-primary" type="button">Volver al menu</button>
+    
+    <a class="btn btn-primary me-md-2" href="{{route('profesores.lista')}}"type="button">Cambiar a profesores</a>
 </div>
 
 @endsection
